@@ -1,8 +1,10 @@
 # Dockerfile, Image, Container
 FROM python
 
-ADD main.py .
+COPY requirements.txt .
 
-RUN pip install requests beautifulsoup4
+RUN pip install -r requirements.txt
+
+ADD main.py .
 
 CMD [ "python", "./main.py" ]
